@@ -3,133 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎访问 f.e.1.b.1.c.7.6.4.1.a.2.ip6.arpa</title>
+    <title>欢迎</title>
     <style>
         body {
             font-family: 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f5f5f5;
+            min-height: calc(100vh - 40px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea, #764ba2, #43cea2, #185a9d, #ffaf7b, #d76d77, #70e1f5, #ffd194);
+            background-size: 1600% 1600%;
+            animation: gradientBG 18s ease-in-out infinite, rotateBG 20s linear infinite;
+        }
+        body.bg1 {
+            background: linear-gradient(135deg, #667eea, #764ba2, #43cea2, #185a9d, #ffaf7b, #d76d77, #70e1f5, #ffd194);
+            background-size: 1600% 1600%;
+            animation: gradientBG 18s ease-in-out infinite, rotateBG 20s linear infinite;
+        }
+        body.bg2 {
+            background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+            background-size: 1200% 1200%;
+            animation: gradientBG2 14s ease-in-out infinite;
+        }
+        body.bg3 {
+            background: radial-gradient(circle, #fbc2eb 0%, #a6c1ee 100%);
+            animation: none;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            25% {background-position: 50% 100%;}
+            50% {background-position: 100% 50%;}
+            75% {background-position: 50% 0%;}
+            100% {background-position: 0% 50%;}
+        }
+        @keyframes rotateBG {
+            0% {filter: hue-rotate(0deg);}
+            100% {filter: hue-rotate(360deg);}
+        }
+        @keyframes gradientBG2 {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 5px rgba(51, 51, 51, 0.2), 0 0 10px rgba(51, 51, 51, 0.1);
+            }
+            50% {
+                text-shadow: 0 0 10px rgba(51, 51, 51, 0.4), 0 0 20px rgba(51, 51, 51, 0.2);
+            }
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
             padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            animation: fadeIn 1s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            animation: fadeInSlideUp 0.8s ease-out forwards;
         }
         h1 {
             color: #333;
             text-align: center;
             margin-bottom: 30px;
-            animation: slideDown 1.2s ease-out;
+            animation: textGlow 3s infinite ease-in-out;
         }
         .content {
-            color: #666;
+            color: #444;
             text-align: center;
-        }
-        .content p {
-            animation: slideIn 1.5s ease-out;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        .content p:nth-child(2) {
-            animation-delay: 0.5s;
         }
         .footer {
             margin-top: 40px;
             text-align: center;
             color: #999;
             font-size: 14px;
-            animation: fadeIn 2s ease-in-out;
-            animation-delay: 1.5s;
-            opacity: 0;
-            animation-fill-mode: forwards;
         }
-        
-        /* 动画关键帧定义 */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .bg-selector {
+            position: static;
+            margin: 32px auto 0 auto;
+            display: inline-block;
+            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            padding: 8px 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
-        @keyframes slideDown {
-            from { 
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to { 
-                transform: translateY(0);
-                opacity: 1;
-            }
+        #bg-video {
+            display: none;
         }
-        
-        @keyframes slideIn {
-            from { 
-                transform: translateX(-30px);
-                opacity: 0;
-            }
-            to { 
-                transform: translateX(0);
-                opacity: 1;
-            }
+        body.bg4 #bg-video {
+            display: block;
         }
-        
-        /* 悬停效果 */
-        h1:hover {
-            color: #4a90e2;
-            transition: color 0.3s ease;
+        body.bg4 {
+            background: #000;
+            animation: none;
         }
-        
-        .container:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: box-shadow 0.3s ease;
+        .bg-selector label {
+            font-size: 15px;
+            margin-right: 8px;
         }
-        
-        .github-footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 10px;
+        .bg-selector select {
+            font-size: 15px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
         }
-        
-        .github-footer a {
-            display: flex;
-            align-items: center;
-            color: #24292e;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        body.day {
+            color: #222;
         }
-        
-        .github-footer a:hover {
-            color: #4a90e2;
+        body.night {
+            color: #eee;
         }
-        
-        .github-footer svg {
-            margin-right: 5px;
-            fill: currentColor;
+        .container.day {
+            background-color: rgba(255,255,255,0.3);
+            color: #222;
+        }
+        .container.night {
+            background-color: rgba(30,30,30,0.5);
+            color: #eee;
+        }
+        .toggle-mode {
+            margin: 32px auto 0 auto;
+            display: inline-block;
+            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            padding: 8px 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="video-bg-wrapper">
+        <video id="bg-video" autoplay loop muted playsinline style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-1;pointer-events:none;">
+            <source src="https://imgse.fishcpy.top/upload/mc.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+    </div>
+    <div class="container day" id="main-container">
         <h1>f.e.1.b.1.c.7.6.4.1.a.2.ip6.arpa</h1>
         <div class="content">
             <p>这是一个奇怪的域名</p>
-        </div>
-        <div class="footer">
-            <div class="github-footer">
-                <a href="https://github.com/fishcpy/f.e.1.b.1.c.7.6.4.1.a.2.ip6.arpa" target="_blank">
-                    <svg height="24" width="24" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                    </svg>
-                    本页面开源于GitHub
-                </a>
+            <button class="toggle-mode" id="toggleMode">切换白天/黑夜</button>
+            <div class="bg-selector">
+                <label for="bgEffect">背景效果：</label>
+                <select id="bgEffect">
+                    <option value="bg1">流动渐变+旋转</option>
+                    <option value="bg2">柔和渐变</option>
+                    <option value="bg3">渐变</option>
+                    <option value="bg4" selected>视频背景</option>
+                </select>
             </div>
         </div>
     </div>
+    <script>
+        const select = document.getElementById('bgEffect');
+        const video = document.getElementById('bg-video');
+        const toggleMode = document.getElementById('toggleMode');
+        const container = document.getElementById('main-container');
+        let isNight = false;
+        document.body.className = select.value + ' day';
+        container.className = 'container day';
+        if(select.value === 'bg4') {
+            video.style.display = 'block';
+        } else {
+            video.style.display = 'none';
+        }
+        select.addEventListener('change', function() {
+            document.body.className = select.value + (isNight ? ' night' : ' day');
+            container.className = 'container' + (isNight ? ' night' : ' day');
+            if(select.value === 'bg4') {
+                video.style.display = 'block';
+            } else {
+                video.style.display = 'none';
+            }
+        });
+        toggleMode.addEventListener('click', function() {
+            isNight = !isNight;
+            document.body.className = select.value + (isNight ? ' night' : ' day');
+            container.className = 'container' + (isNight ? ' night' : ' day');
+        });
+    </script>
 </body>
 </html>
